@@ -1,16 +1,55 @@
-const originText = document.querySelector("#sample-text").textContent;
-const testWrapper = document.querySelector("#test-wrapper");
-const textArea = document.querySelector("#text-area");
-const theTimer = document.querySelector("#timer");
-const resetButton = document.querySelector("#reset");
+let originText = document.querySelector("#sample-text");
+let testWrapper = document.querySelector("#test-wrapper");
+let textArea = document.querySelector("#text-area");
+let theTimer = document.querySelector("#timer");
+let resetButton = document.querySelector("#reset");
 
 textArea.addEventListener("keypress", Start);
 textArea.addEventListener("keyup", spellCheck);
 resetButton.addEventListener("click", reset);
 
-var timer = [0, 1];
-var isTimerRunnig = false;
-var interval;
+const testWords = [
+  "Lorem",
+  "ipsum",
+  "dolor",
+  "Sit",
+  "amet",
+  "Consectetur",
+  "adipisicing",
+  "Elit",
+  "sed",
+  "eiusmod",
+  "Tempor",
+  "incididunt",
+  "labore",
+  "Magna",
+  "aliqua",
+  "enim",
+  "minim",
+  "Veniam",
+  "Quis",
+  "nostrud",
+  "exercitation",
+  "ullamco",
+  "laboris",
+  "nisi",
+  "aliquip",
+  "commodo",
+  "consequat",
+];
+originText.innerHTML = wordSelector(testWords);
+let timer = [0, 1];
+let isTimerRunnig = false;
+let interval;
+
+function wordSelector(arr) {
+  let words = "";
+  for (let i = 0; i < 10; i++) {
+    let randomNumber = Math.floor(Math.random() * arr.length);
+    words += arr[randomNumber] + " ";
+  }
+  return words.trim();
+}
 
 function runTimer() {
   let currentTime = `${leadingZero(timer[0])}:${leadingZero(timer[1])}`;
@@ -33,11 +72,11 @@ function Start() {
 
 function spellCheck() {
   let textEntered = textArea.value;
-  let originTextMatch = originText.substring(0, textEntered.length);
+  let originTextMatch = originText.innerHTML.substring(0, textEntered.length);
 
   if (textEntered == "") {
     testWrapper.style.borderColor = "grey";
-  } else if (textEntered == originText) {
+  } else if (textEntered == originText.innerHTML) {
     testWrapper.style.borderColor = "lightgreen";
     showResult();
     textArea.setAttribute("disabled", "true");
@@ -54,11 +93,12 @@ function spellCheck() {
 function reset() {
   clearInterval(interval);
   interval = null;
+  originText.innerHTML = wordSelector(testWords);
   timer = [0, 1];
   isTimerRunnig = false;
-    textArea.value = "";
-    textArea.removeAttribute("disabled");
-    textArea.focus();
+  textArea.value = "";
+  textArea.removeAttribute("disabled");
+  textArea.focus();
   theTimer.innerHTML = "00:00";
   testWrapper.style.borderColor = "grey";
 }
@@ -71,8 +111,20 @@ function leadingZero(time) {
 }
 
 function showResult() {
-  let sumWords = originText.split(" ").length;
+  let sumWords = originText.innerHTML.split(" ").length;
   let sumTimes = Math.round(timer[0] * 60 + timer[1]);
   let result = Math.round((sumWords * 60) / sumTimes);
-  textArea.value = `Your typing speed is ${result} WPM(words per minute)`;
+  if (result >= 30) {
+    textArea.value = `Your typing speed is ${result} WPM(words per minute)
+    Your typing speed is EXCELLENT!`;
+  } else if (result < 30 && result >= 20) {
+    textArea.value = `Your typing speed is ${result} WPM(words per minute)
+    Your typing speed is GOOD!`;
+  } else if (result < 20 && result >= 10) {
+    textArea.value = `Your typing speed is ${result} WPM(words per minute)
+    Your typing speed is MODERATE!`;
+  } else if (result < 10) {
+    textArea.value = `Your typing speed is ${result} WPM(words per minute)
+    Your typing speed is NOT GOOD!`;
+  }
 }

@@ -23,7 +23,7 @@
       <section id="test-area">
         <fieldset>
           <legend>Sample text</legend>
-          <p id="sample-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          <p id="sample-text"></p>
         </fieldset>
 
         <div id="test-wrapper">
@@ -31,6 +31,12 @@
             id="text-area"
             name="textarea"
             autocomplete="off"
+            onselectstart="return false"
+            onpaste="return false"
+            onCopy="return false"
+            onCut="return false"
+            onDrag="return false"
+            onDrop="return false"
             placeholder="Start typing..."></textarea>
         </div>
 
