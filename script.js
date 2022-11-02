@@ -1,9 +1,11 @@
+let themeBtn = document.querySelector("#theme-btn");
 let originText = document.querySelector("#sample-text");
 let testWrapper = document.querySelector("#test-wrapper");
 let textArea = document.querySelector("#text-area");
 let theTimer = document.querySelector("#timer");
 let resetButton = document.querySelector("#reset");
 
+themeBtn.addEventListener("click", themeChanger);
 textArea.addEventListener("keypress", Start);
 textArea.addEventListener("keyup", spellCheck);
 resetButton.addEventListener("click", reset);
@@ -41,6 +43,30 @@ originText.innerHTML = wordSelector(testWords);
 let timer = [0, 1];
 let isTimerRunnig = false;
 let interval;
+let isLight = true;
+let sotrage = window.localStorage;
+if (sotrage.getItem("isLightState")) {
+  if (!(sotrage.getItem("isLightState") === "light" ? true : false)) {
+    document.body.classList.add("dark-mode");
+    themeBtn.firstElementChild.setAttribute("src", "dark.png");
+    isLight = false;
+    sotrage.setItem("isLightState", "dark");
+  }
+}
+
+function themeChanger() {
+  if (isLight) {
+    document.body.classList.add("dark-mode");
+    themeBtn.firstElementChild.setAttribute("src", "dark.png");
+    isLight = false;
+    sotrage.setItem("isLightState", "dark");
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeBtn.firstElementChild.setAttribute("src", "light.png");
+    isLight = true;
+    sotrage.setItem("isLightState", "light");
+  }
+}
 
 function wordSelector(arr) {
   let words = "";

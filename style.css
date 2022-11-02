@@ -1,3 +1,22 @@
+:root {
+  --body-bg: white;
+  --btn-theme-bg: whitesmoke;
+  --main-article-clr: whitesmoke;
+  --main-article-bg: deepskyblue;
+  --main-article-bs: lightgrey;
+  --main-article-h1-clr: whitesmoke;
+  --test-area-clr: black;
+  --sample-text-clr: black;
+  --test-wrapper-bc: gray;
+  --timer-clr: black;
+  --reset-clr: gray;
+  --reset-bc: gray;
+  --reset-bs: lightgray;
+  --reset-clr-hover: whitesmoke;
+  --reset-bc-hover: lightgrey;
+  --reset-bg-hover: gray;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,18 +25,64 @@
   font-family: sans-serif;
 }
 
+body {
+  background-color: var(--body-bg);
+}
+
+body.dark-mode {
+  --body-bg: navy;
+  --btn-theme-bg: lightgray;
+  --main-article-clr: lightgray;
+  --main-article-bg: blue;
+  --main-article-bs: none;
+  --main-article-h1-clr: lightgray;
+  --test-area-clr: whitesmoke;
+  --sample-text-clr: whitesmoke;
+  --test-wrapper-bc: gray;
+  --timer-clr: whitesmoke;
+  --reset-clr: gray;
+  --reset-bc: gray;
+  --reset-bs: none;
+  --reset-clr-hover: whitesmoke;
+  --reset-bc-hover: lightgrey;
+  --reset-bg-hover: gray;
+}
+
+body span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--btn-theme-bg);
+  transition: transform 0.2s ease-in-out;
+}
+
+body span:hover {
+  transform: scale(1.2);
+}
+
+body span img {
+  display: inline-block;
+  margin: 5px auto;
+  width: 50px;
+  height: 50px;
+}
+
 main article {
   padding: 1rem 1rem;
   font-size: 1.5rem;
-  color: whitesmoke;
-  background: deepskyblue;
-  box-shadow: 0 0 10px 5px lightgrey;
+  color: var(--main-article-clr);
+  background: var(--main-article-bg);
+  box-shadow: 0 0 10px 5px var(--main-article-bs);
 }
 
 main article h1 {
   padding: 1rem 2rem;
   text-align: center;
-  color: whitesmoke;
+  color: var(--main-article-h1-clr);
 }
 
 main article p {
@@ -46,6 +111,7 @@ main article p {
   margin-left: 1rem;
   padding: 0 0.5rem;
   font-size: 1.5rem;
+  color: var(--test-area-clr)
 }
 
 #test-area fieldset #sample-text {
@@ -53,6 +119,7 @@ main article p {
   line-height: 2rem;
   word-spacing: 1rem;
   font-size: 1.2rem;
+  color: var(--sample-text-clr);
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -60,7 +127,7 @@ main article p {
 
 #test-wrapper {
   display: flex;
-  border: 5px solid grey;
+  border: 5px solid var(--test-wrapper-bc);
   border-radius: 5px;
 }
 
@@ -85,20 +152,22 @@ main article p {
 #timer {
   font-size: 3em;
   font-weight: bold;
+  color: var(--timer-clr);
 }
 
 #reset {
   padding: 0 0.5em;
   font-size: 1.2em;
-  color: gray;
-  border: 2px solid grey;
+  color: var(--reset-clr);
+  border: 2px solid var(--reset-bc);
   border-radius: 5px;
-  box-shadow: 0 2px 3px 1px lightgrey;
+  box-shadow: 0 2px 3px 1px var(--reset-bs);
   cursor: pointer;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #reset:hover {
-  border-color: lightgrey;
-  color: whitesmoke;
-  background-color: gray;
+  color: var(--reset-clr-hover);
+  border-color: var(--reset-bc-hover);
+  background-color: var(--reset-bg-hover);
 }
