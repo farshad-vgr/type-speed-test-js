@@ -48,7 +48,7 @@ let sotrage = window.localStorage;
 if (sotrage.getItem("isLightState")) {
   if (!(sotrage.getItem("isLightState") === "light" ? true : false)) {
     document.body.classList.add("dark-mode");
-    themeBtn.firstElementChild.setAttribute("src", "dark.png");
+    themeBtn.firstElementChild.setAttribute("src", "./assets/images/dark.png");
     isLight = false;
     sotrage.setItem("isLightState", "dark");
   }
@@ -57,12 +57,12 @@ if (sotrage.getItem("isLightState")) {
 function themeChanger() {
   if (isLight) {
     document.body.classList.add("dark-mode");
-    themeBtn.firstElementChild.setAttribute("src", "dark.png");
+    themeBtn.firstElementChild.setAttribute("src", "./assets/images/dark.png");
     isLight = false;
     sotrage.setItem("isLightState", "dark");
   } else {
     document.body.classList.remove("dark-mode");
-    themeBtn.firstElementChild.setAttribute("src", "light.png");
+    themeBtn.firstElementChild.setAttribute("src", "./assets/images/light.png");
     isLight = true;
     sotrage.setItem("isLightState", "light");
   }
@@ -109,7 +109,7 @@ function spellCheck() {
     clearInterval(interval);
   } else {
     if (textEntered == originTextMatch) {
-      testWrapper.style.borderColor = "darkorange";
+      testWrapper.style.borderColor = "deepskyblue";
     } else {
       testWrapper.style.borderColor = "red";
     }
@@ -154,3 +154,5 @@ function showResult() {
     Your typing speed is NOT GOOD!`;
   }
 }
+
+resetButton.click();

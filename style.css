@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Mont";
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
+}
+
 :root {
   --body-bg: white;
   --btn-theme-bg: whitesmoke;
@@ -21,11 +26,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
   cursor: default;
-  font-family: sans-serif;
 }
 
 body {
+  font-family: "Mont";
   background-color: var(--body-bg);
 }
 
@@ -50,25 +56,23 @@ body.dark-mode {
 
 body span {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 60px;
-  height: 60px;
+  top: 0.5rem;
+  right: 0.5rem;
   text-align: center;
-  border-radius: 50%;
-  background-color: var(--btn-theme-bg);
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 body span:hover {
-  transform: scale(1.2);
+  transform: scale(115%);
 }
 
 body span img {
   display: inline-block;
-  margin: 5px auto;
-  width: 50px;
-  height: 50px;
+  margin: 0.25rem auto;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
 }
 
 main article {
@@ -87,10 +91,9 @@ main article h1 {
 
 main article p {
   margin: 0 auto;
-  min-width: 300px;
-  max-width: 600px;
-  line-height: 2rem;
+  width: 70vw;
   text-align: justify;
+  line-height: 2rem;
 }
 
 #test-area {
@@ -98,13 +101,12 @@ main article p {
   flex-direction: column;
   justify-content: center;
   margin: 1rem auto;
-  min-width: 300px;
-  max-width: 500px;
+  width: 50vw;
 }
 
 #test-area fieldset {
-  margin: 5px;
-  border-radius: 5px;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
 }
 
 #test-area fieldset legend {
@@ -120,20 +122,20 @@ main article p {
   word-spacing: 1rem;
   font-size: 1.2rem;
   color: var(--sample-text-clr);
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 
 #test-wrapper {
   display: flex;
-  border: 5px solid var(--test-wrapper-bc);
-  border-radius: 5px;
+  margin: 0 auto;
+  width: 99%;
+  border: 0.25rem solid var(--test-wrapper-bc);
+  border-radius: 0.25rem;
 }
 
 #test-wrapper textarea {
   flex: 1;
   padding: 1rem;
+  text-align: center;
   line-height: 2rem;
   word-spacing: 0.2rem;
   font-size: 1.2rem;
@@ -150,7 +152,7 @@ main article p {
 }
 
 #timer {
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: bold;
   color: var(--timer-clr);
 }
@@ -158,16 +160,18 @@ main article p {
 #reset {
   padding: 0 0.5em;
   font-size: 1.2em;
+  letter-spacing: 0.1rem;
   color: var(--reset-clr);
   border: 2px solid var(--reset-bc);
-  border-radius: 5px;
+  border-radius: 1rem;
   box-shadow: 0 2px 3px 1px var(--reset-bs);
+  transition: 0.5s;
   cursor: pointer;
-  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #reset:hover {
   color: var(--reset-clr-hover);
   border-color: var(--reset-bc-hover);
   background-color: var(--reset-bg-hover);
+  letter-spacing: 0.25rem;
 }
