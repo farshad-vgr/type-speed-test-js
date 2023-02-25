@@ -1,0 +1,25 @@
+{
+	"name": "type-speed-test",
+	"version": "1.0.0",
+	"description": "<h3>Hello guys, how are you?!?</h3>\r <p>This is a typing speed test with HTML, CSS and JavaScript!!</p>\r <p>I appreciate it if you contribute to this project and add other options and more themes to this typing speed test</p>\r <h3>Latest screenshots:</h3>\r <img src=\"screenshot1.png\" alt=\"Project screenshot\"><br>\r <img src=\"screenshot2.png\" alt=\"Project screenshot\">",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "npx tailwindcss -i ./src/style.css -o ./src/output-mini.css --watch --minify",
+		"minicss": "npx tailwindcss -o output-mini.css --minify"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/farshad-vgr/type-speed-test.git"
+	},
+	"keywords": [],
+	"author": "farshadvaghari@gmail.com",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/farshad-vgr/type-speed-test/issues"
+	},
+	"homepage": "https://github.com/farshad-vgr/type-speed-test#readme",
+	"devDependencies": {
+		"tailwindcss": "^3.2.7"
+	}
+}
