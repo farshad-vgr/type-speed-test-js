@@ -1,6 +1,6 @@
 # type-speed-test
-<h3>Hello guys, how are you?!?</h3>
-<p>This is a typing speed test with HTML, CSS and JavaScript!!</p>
-<p>I appreciate it if you contribute to this project and add other options and more themes to this typing speed test</p>
-<h3>Latest screenshots:</h3>
-<img src="sample.png" alt="Project screenshot">
+<h3>Hello guys</h3>
+<p>This is a typing speed test with some features</p>
+<p>I appreciate it if you contribute to this project and add other options and more themes or colors to this app. Thanx!</p>
+<h3>Latest screenshot:</h3>
+<img src="sample.png" alt="Project sample screenshot" width="800" height="350">
