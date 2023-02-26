@@ -18,8 +18,11 @@
 
 	<body class="bg-white dark:bg-sky-800">
 		<main>
-			<span id="theme-btn" class="absolute top-2 right-2 text-center cursor-pointer transition duration-200 ease-in-out hover:scale-110" title="Change Theme!">
-				<img src="./assets/images/light.png"  class="inline-block w-12 h-12 cursor-pointer" title="Change Theme!"/>
+			<span
+				id="theme-btn"
+				class="absolute top-2 right-2 text-center cursor-pointer transition duration-200 ease-in-out hover:scale-110"
+				title="Change Theme!">
+				<img src="./assets/images/light.png" class="inline-block w-12 h-12 cursor-pointer" title="Change Theme!" />
 			</span>
 
 			<article class="p-4 text-2xl text-slate-200 bg-sky-400 shadow-xl dark:bg-sky-700">
@@ -33,7 +36,7 @@
 
 			<section class="flex flex-col justify-center my-8 mx-auto w-1/2">
 				<fieldset class="my-4 border-2 rounded-md border-gray-400">
-					<legend class="ml-4 px-2 text-2xl text-gray-500 dark:text-gray-400"> Sample text </legend>
+					<legend class="ml-4 px-2 text-2xl text-gray-500 dark:text-gray-400">Sample text</legend>
 
 					<p id="sample-text" class="p-4 text-2xl leading-8 [word-spacing:1rem] dark:text-slate-200"></p>
 				</fieldset>
@@ -50,7 +53,7 @@
 						onDrag="return false"
 						onDrop="return false"
 						placeholder="Start typing..."
-						class="flex-1 py-4 p-2 leading-8 text-2xl [word-spacing:1rem] border-none resize-none outline-none cursor-text placeholder:text-2xl dark:bg-sky-800 dark:text-slate-200">
+						class="flex-1 py-4 p-2 leading-8 text-2xl [word-spacing:1rem] border-none resize-none outline-none cursor-text placeholder:text-2xl placeholder:italic dark:bg-sky-800 dark:text-slate-200">
 					</textarea>
 				</div>
 
@@ -59,7 +62,11 @@
 						<div id="timer" class="text-5xl font-bold dark:text-slate-200">00:00</div>
 					</section>
 
-					<button id="reset" class="p-2 text-xl leading-3 text-gray-600 border-2 border-gray-600 rounded-2xl shadow-lg [transition:0.3s] cursor-pointer hover:bg-gray-200 hover:[letter-spacing:0.125rem] hover:[transition:0.3s] dark:text-sky-500 dark:border-sky-500 dark:hover:bg-sky-900">Restart!</button>
+					<button
+						id="reset"
+						class="p-2 text-xl leading-3 text-gray-600 border-2 border-gray-600 rounded-2xl shadow-lg [transition:0.3s] cursor-pointer hover:bg-gray-200 hover:[letter-spacing:0.125rem] hover:[transition:0.3s] dark:text-sky-500 dark:border-sky-500 dark:hover:bg-sky-900">
+						Restart!
+					</button>
 				</div>
 			</section>
 		</main>
