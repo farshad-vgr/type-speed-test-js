@@ -1,14 +1,14 @@
-const themeBtn = document.querySelector("#theme-btn");
-const originText = document.querySelector("#sample-text");
-const testWrapper = document.querySelector("#test-wrapper");
+const themeButton = document.querySelector("#theme-btn");
+const sampleText = document.querySelector("#sample-text");
+const textValidator = document.querySelector("#text-validator");
 const textArea = document.querySelector("#text-area");
-const theTimer = document.querySelector("#timer");
-const resetButton = document.querySelector("#reset");
+const showTimer = document.querySelector("#timer");
+const restartButton = document.querySelector("#restart-btn");
 
-themeBtn.addEventListener("click", themeChanger);
+themeButton.addEventListener("click", themeChanger);
 textArea.addEventListener("keypress", Start);
 textArea.addEventListener("keyup", spellCheck);
-resetButton.addEventListener("click", reset);
+restartButton.addEventListener("click", reset);
 
 const testWords = [
   "Lorem",
@@ -39,7 +39,7 @@ const testWords = [
   "commodo",
   "consequat",
 ];
-originText.innerHTML = wordSelector(testWords);
+sampleText.innerHTML = wordSelector(testWords);
 let timer = [0, 1];
 let isTimerRunnig = false;
 let interval;
@@ -49,7 +49,7 @@ let sotrage = window.localStorage;
 if (sotrage.getItem("isLightState")) {
   if (!(sotrage.getItem("isLightState") === "light" ? true : false)) {
     document.documentElement.classList.add("dark");
-    themeBtn.firstElementChild.setAttribute("src", "./assets/images/dark.png");
+    themeButton.firstElementChild.setAttribute("src", "./assets/images/dark.png");
     isLight = false;
     sotrage.setItem("isLightState", "dark");
   }
@@ -58,12 +58,12 @@ if (sotrage.getItem("isLightState")) {
 function themeChanger() {
   if (isLight) {
     document.documentElement.classList.add("dark");
-    themeBtn.firstElementChild.setAttribute("src", "./assets/images/dark.png");
+    themeButton.firstElementChild.setAttribute("src", "./assets/images/dark.png");
     isLight = false;
     sotrage.setItem("isLightState", "dark");
   } else {
     document.documentElement.classList.remove("dark");
-    themeBtn.firstElementChild.setAttribute("src", "./assets/images/light.png");
+    themeButton.firstElementChild.setAttribute("src", "./assets/images/light.png");
     isLight = true;
     sotrage.setItem("isLightState", "light");
   }
@@ -81,7 +81,7 @@ function wordSelector(arr) {
 function runTimer() {
   let currentTime = `${leadingZero(timer[0])}:${leadingZero(timer[1])}`;
 
-  theTimer.innerHTML = currentTime;
+  showTimer.innerHTML = currentTime;
 
   timer[1]++;
   timer[0] = Math.floor(timer[1] / 60);
@@ -99,35 +99,35 @@ function Start() {
 
 function spellCheck() {
   let textEntered = textArea.value;
-  let originTextMatch = originText.innerHTML.substring(0, textEntered.length);
+  let sampleTextMatch = sampleText.innerHTML.substring(0, textEntered.length);
 
   if (textEntered == "") {
-    testWrapper.style.borderColor = "grey";
-  } else if (textEntered == originText.innerHTML) {
-    testWrapper.style.borderColor = "lightgreen";
-    showResult();
-    textArea.setAttribute("disabled", "true");
-    clearInterval(interval);
-  } else {
-    if (textEntered == originTextMatch) {
-      testWrapper.style.borderColor = "deepskyblue";
-    } else {
-      testWrapper.style.borderColor = "red";
-    }
-  }
+    textValidator.style.borderColor = "grey";
+  } else if (textEntered == sampleText.innerHTML) {
+		textValidator.style.borderColor = "lightgreen";
+		showResult();
+		textArea.setAttribute("disabled", "true");
+		clearInterval(interval);
+	} else {
+		if (textEntered == sampleTextMatch) {
+			textValidator.style.borderColor = "deepskyblue";
+		} else {
+			textValidator.style.borderColor = "red";
+		}
+	}
 }
 
 function reset() {
   clearInterval(interval);
   interval = null;
-  originText.innerHTML = wordSelector(testWords);
+  sampleText.innerHTML = wordSelector(testWords);
   timer = [0, 1];
   isTimerRunnig = false;
   textArea.value = "";
   textArea.removeAttribute("disabled");
   textArea.focus();
-  theTimer.innerHTML = "00:00";
-  testWrapper.style.borderColor = "grey";
+  showTimer.innerHTML = "00:00";
+  textValidator.style.borderColor = "grey";
 }
 
 function leadingZero(time) {
@@ -138,7 +138,7 @@ function leadingZero(time) {
 }
 
 function showResult() {
-  let sumWords = originText.innerHTML.split(" ").length;
+  let sumWords = sampleText.innerHTML.split(" ").length;
   let sumTimes = Math.round(timer[0] * 60 + timer[1]);
   let result = Math.round((sumWords * 60) / sumTimes);
   if (result >= 30) {
@@ -156,4 +156,4 @@ function showResult() {
   }
 }
 
-resetButton.click();
+restartButton.click();

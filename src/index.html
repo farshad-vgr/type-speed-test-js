@@ -18,6 +18,7 @@
 
 	<body class="bg-white dark:bg-sky-800">
 		<main>
+			<!-- Theme toggler button -->
 			<span
 				id="theme-btn"
 				class="absolute top-2 right-2 text-center cursor-pointer transition duration-200 ease-in-out hover:scale-110"
@@ -25,6 +26,7 @@
 				<img src="./assets/images/light.png" class="inline-block w-12 h-12 cursor-pointer" title="Change Theme!" />
 			</span>
 
+			<!-- Header section for title and Tutorial -->
 			<article class="p-4 text-2xl text-slate-200 bg-sky-400 shadow-xl dark:bg-sky-700">
 				<h1 class="py-4 px-8 text-center text-3xl font-bold tracking-wider">Type Speed Test</h1>
 
@@ -34,14 +36,17 @@
 				</p>
 			</article>
 
+			<!-- Testing and options section -->
 			<section class="flex flex-col justify-center my-8 mx-auto w-1/2">
+				<!-- Sample text box -->
 				<fieldset class="my-4 border-2 rounded-md border-gray-400">
 					<legend class="ml-4 px-2 text-2xl text-gray-500 dark:text-gray-400">Sample text</legend>
 
 					<p id="sample-text" class="p-4 text-2xl leading-8 [word-spacing:1rem] dark:text-slate-200"></p>
 				</fieldset>
 
-				<div id="test-wrapper" class="flex my-0 mx-auto p-2 w-full border-4 rounded-md text-gray-400">
+				<!-- Text area to writing the sample text and show validation -->
+				<div id="text-validator" class="flex my-0 mx-auto p-2 w-full border-4 rounded-md text-gray-400">
 					<textarea
 						id="text-area"
 						name="textarea"
@@ -57,17 +62,18 @@
 					</textarea>
 				</div>
 
-				<div class="flex justify-between mt-4">
-					<section>
+				<!-- Timer and Restart button section -->
+				<section class="flex justify-between mt-4">
+					<div>
 						<div id="timer" class="text-5xl font-bold dark:text-slate-200">00:00</div>
-					</section>
+					</div>
 
 					<button
-						id="reset"
+						id="restart-btn"
 						class="p-2 text-xl leading-3 text-gray-600 border-2 border-gray-600 rounded-2xl shadow-lg [transition:0.3s] cursor-pointer hover:bg-gray-200 hover:[letter-spacing:0.125rem] hover:[transition:0.3s] dark:text-sky-500 dark:border-sky-500 dark:hover:bg-sky-900">
 						Restart!
 					</button>
-				</div>
+				</section>
 			</section>
 		</main>
 
