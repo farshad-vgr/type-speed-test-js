@@ -7,25 +7,6 @@
   src: url("./assets/fonts/Montserrat-Regular.ttf");
 }
 
-:root {
-  --body-bg: white;
-  --btn-theme-bg: whitesmoke;
-  --main-article-clr: whitesmoke;
-  --main-article-bg: deepskyblue;
-  --main-article-bs: lightgrey;
-  --main-article-h1-clr: whitesmoke;
-  --test-area-clr: black;
-  --sample-text-clr: black;
-  --test-wrapper-bc: gray;
-  --timer-clr: black;
-  --reset-clr: gray;
-  --reset-bc: gray;
-  --reset-bs: lightgray;
-  --reset-clr-hover: whitesmoke;
-  --reset-bc-hover: lightgrey;
-  --reset-bg-hover: gray;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -37,22 +18,3 @@
 body {
   font-family: "Mont", sans-serif;
 }
-
-/* body.dark-mode {
-  --body-bg: navy;
-  --btn-theme-bg: lightgray;
-  --main-article-clr: lightgray;
-  --main-article-bg: blue;
-  --main-article-bs: none;
-  --main-article-h1-clr: lightgray;
-  --test-area-clr: whitesmoke;
-  --sample-text-clr: whitesmoke;
-  --test-wrapper-bc: gray;
-  --timer-clr: whitesmoke;
-  --reset-clr: gray;
-  --reset-bc: gray;
-  --reset-bs: none;
-  --reset-clr-hover: whitesmoke;
-  --reset-bc-hover: lightgrey;
-  --reset-bg-hover: gray;
-} */

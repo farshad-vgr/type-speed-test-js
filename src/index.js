@@ -1,9 +1,9 @@
-let themeBtn = document.querySelector("#theme-btn");
-let originText = document.querySelector("#sample-text");
-let testWrapper = document.querySelector("#test-wrapper");
-let textArea = document.querySelector("#text-area");
-let theTimer = document.querySelector("#timer");
-let resetButton = document.querySelector("#reset");
+const themeBtn = document.querySelector("#theme-btn");
+const originText = document.querySelector("#sample-text");
+const testWrapper = document.querySelector("#test-wrapper");
+const textArea = document.querySelector("#text-area");
+const theTimer = document.querySelector("#timer");
+const resetButton = document.querySelector("#reset");
 
 themeBtn.addEventListener("click", themeChanger);
 textArea.addEventListener("keypress", Start);
@@ -45,9 +45,10 @@ let isTimerRunnig = false;
 let interval;
 let isLight = true;
 let sotrage = window.localStorage;
+
 if (sotrage.getItem("isLightState")) {
   if (!(sotrage.getItem("isLightState") === "light" ? true : false)) {
-    document.body.classList.add("dark-mode");
+    document.documentElement.classList.add("dark");
     themeBtn.firstElementChild.setAttribute("src", "./assets/images/dark.png");
     isLight = false;
     sotrage.setItem("isLightState", "dark");
@@ -56,12 +57,12 @@ if (sotrage.getItem("isLightState")) {
 
 function themeChanger() {
   if (isLight) {
-    document.body.classList.add("dark-mode");
+    document.documentElement.classList.add("dark");
     themeBtn.firstElementChild.setAttribute("src", "./assets/images/dark.png");
     isLight = false;
     sotrage.setItem("isLightState", "dark");
   } else {
-    document.body.classList.remove("dark-mode");
+    document.documentElement.classList.remove("dark");
     themeBtn.firstElementChild.setAttribute("src", "./assets/images/light.png");
     isLight = true;
     sotrage.setItem("isLightState", "light");

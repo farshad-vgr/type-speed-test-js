@@ -16,13 +16,13 @@
 		<title>Type Speed Test</title>
 	</head>
 
-	<body class="bg-white">
+	<body class="bg-white dark:bg-sky-800">
 		<main>
-			<span id="theme-btn" class="absolute top-2 right-2 text-center cursor-pointer transition duration-200 ease-in-out hover:scale-110">
-				<img src="./assets/images/light.png"  class="inline-block w-12 h-12 cursor-pointer"/>
+			<span id="theme-btn" class="absolute top-2 right-2 text-center cursor-pointer transition duration-200 ease-in-out hover:scale-110" title="Change Theme!">
+				<img src="./assets/images/light.png"  class="inline-block w-12 h-12 cursor-pointer" title="Change Theme!"/>
 			</span>
 
-			<article class="p-4 text-2xl text-slate-200 bg-sky-400 shadow-xl">
+			<article class="p-4 text-2xl text-slate-200 bg-sky-400 shadow-xl dark:bg-sky-700">
 				<h1 class="py-4 px-8 text-center text-3xl font-bold tracking-wider">Type Speed Test</h1>
 
 				<p class="my-0 mx-auto w-3/4">
@@ -33,9 +33,9 @@
 
 			<section class="flex flex-col justify-center my-8 mx-auto w-1/2">
 				<fieldset class="my-4 border-2 rounded-md border-gray-400">
-					<legend class="ml-4 px-2 text-2xl text-gray-500"> Sample text </legend>
+					<legend class="ml-4 px-2 text-2xl text-gray-500 dark:text-gray-400"> Sample text </legend>
 
-					<p id="sample-text" class="p-4 text-2xl leading-8 [word-spacing:1rem]"></p>
+					<p id="sample-text" class="p-4 text-2xl leading-8 [word-spacing:1rem] dark:text-slate-200"></p>
 				</fieldset>
 
 				<div id="test-wrapper" class="flex my-0 mx-auto p-2 w-full border-4 rounded-md text-gray-400">
@@ -50,16 +50,16 @@
 						onDrag="return false"
 						onDrop="return false"
 						placeholder="Start typing..."
-						class="flex-1 py-4 p-2 leading-8 text-2xl [word-spacing:1rem] border-none resize-none outline-none cursor-text placeholder:text-2xl">
+						class="flex-1 py-4 p-2 leading-8 text-2xl [word-spacing:1rem] border-none resize-none outline-none cursor-text placeholder:text-2xl dark:bg-sky-800 dark:text-slate-200">
 					</textarea>
 				</div>
 
 				<div class="flex justify-between mt-4">
 					<section>
-						<div id="timer" class="text-5xl font-bold">00:00</div>
+						<div id="timer" class="text-5xl font-bold dark:text-slate-200">00:00</div>
 					</section>
 
-					<button id="reset" class="p-2 text-xl leading-3 text-gray-600 border-2 border-gray-600 rounded-2xl shadow-lg [transition:0.3s] cursor-pointer hover:bg-gray-200 hover:[letter-spacing:0.125rem] hover:[transition:0.3s]">Restart!</button>
+					<button id="reset" class="p-2 text-xl leading-3 text-gray-600 border-2 border-gray-600 rounded-2xl shadow-lg [transition:0.3s] cursor-pointer hover:bg-gray-200 hover:[letter-spacing:0.125rem] hover:[transition:0.3s] dark:text-sky-500 dark:border-sky-500 dark:hover:bg-sky-900">Restart!</button>
 				</div>
 			</section>
 		</main>
