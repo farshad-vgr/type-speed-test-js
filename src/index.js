@@ -45,10 +45,9 @@ const testWords = [
 ];
 const testWordsLength = testWords.length;
 
-const sotrage = window.localStorage;
-let isLight = true;
+let isLight; // Theme value
 let selectedLevel = 10; // Default value for starting
-let timer = [0, 1];// First index is minute's value and second index is second's value
+let timer = [0, 1]; // First index is minute's value and second index is second's value
 let isTimerRunnig = false;
 let showDropMenu = false;
 let interval; // Assing return value of the interval
@@ -63,13 +62,19 @@ dropItem2.addEventListener("click", (e) => dropItemHandler(e.target.innerText, 2
 dropItem3.addEventListener("click", (e) => dropItemHandler(e.target.innerText, 30));
 
 // Getting theme status from local storage at the startup
-if (sotrage.getItem("isLightState")) {
-	if (!(sotrage.getItem("isLightState") === "light" ? true : false)) {
+if (window.localStorage.getItem("isLight")) {
+	window.localStorage.getItem("isLight") === "true" ? (isLight = true) : (isLight = false);
+
+	if (isLight) {
+		document.documentElement.classList.remove("dark"); // Removing "dark" class name from html tag to have Tailwind light mode
+		themeButton.firstElementChild.setAttribute("src", "./assets/images/light.png");
+	} else {
 		document.documentElement.classList.add("dark"); // Adding "dark" class name to html tag to have Tailwind dark mode
 		themeButton.firstElementChild.setAttribute("src", "./assets/images/dark.png");
-		isLight = false;
-		sotrage.setItem("isLightState", "dark");
 	}
+} else {
+	isLight = true; // Default theme is
+	window.localStorage.setItem("isLight", "true");
 }
 
 // This function evaluates theme status and shows proper icons and colors
@@ -78,12 +83,12 @@ function themeChanger() {
 		document.documentElement.classList.add("dark"); // Adding "dark" class name to html tag to have Tailwind dark mode
 		themeButton.firstElementChild.setAttribute("src", "./assets/images/dark.png");
 		isLight = false;
-		sotrage.setItem("isLightState", "dark");
+		window.localStorage.setItem("isLight", "false");
 	} else {
-		document.documentElement.classList.remove("dark"); // Adding "dark" class name to html tag to have Tailwind dark mode
+		document.documentElement.classList.remove("dark"); // Removing "dark" class name from html tag to have Tailwind light mode
 		themeButton.firstElementChild.setAttribute("src", "./assets/images/light.png");
 		isLight = true;
-		sotrage.setItem("isLightState", "light");
+		window.localStorage.setItem("isLight", "true");
 	}
 }
 
@@ -109,11 +114,11 @@ function leadingZero(time) {
 function runTimer() {
 	showTimer.innerHTML = `${leadingZero(timer[0])}:${leadingZero(timer[1])}`;
 
-  timer[ 1 ]++;
-  
+	timer[1]++;
+
 	if (timer[1] === 60) {
-    timer[ 0 ]++;
-    timer[ 1 ] = 0;
+		timer[0]++;
+		timer[1] = 0;
 	}
 }
 
@@ -163,8 +168,8 @@ function reset() {
 // This function determines WPM and shows the proper result to the user
 function showResult() {
 	const sumTimes = timer[0] * 60 + timer[1];
-  const result = Math.round((selectedLevel * 60) / sumTimes);
-  
+	const result = Math.round((selectedLevel * 60) / sumTimes);
+
 	if (result >= 30) {
 		textArea.value = `Your typing speed is ${result} WPM(words per minute)
     Your typing speed is "EXCELLENT"!`;
