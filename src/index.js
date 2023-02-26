@@ -142,16 +142,16 @@ function showResult() {
   let result = Math.round((sumWords * 60) / sumTimes);
   if (result >= 30) {
     textArea.value = `Your typing speed is ${result} WPM(words per minute)
-    Your typing speed is EXCELLENT!`;
+    Your typing speed is "EXCELLENT"!`;
   } else if (result < 30 && result >= 20) {
     textArea.value = `Your typing speed is ${result} WPM(words per minute)
-    Your typing speed is GOOD!`;
+    Your typing speed is "GOOD"!`;
   } else if (result < 20 && result >= 10) {
     textArea.value = `Your typing speed is ${result} WPM(words per minute)
-    Your typing speed is MODERATE!`;
+    Your typing speed is "MODERATE"!`;
   } else if (result < 10) {
     textArea.value = `Your typing speed is ${result} WPM(words per minute)
-    Your typing speed is NOT GOOD!`;
+    Your typing speed is "NOT GOOD"!`;
   }
 }
 
