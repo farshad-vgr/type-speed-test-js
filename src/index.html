@@ -23,7 +23,11 @@
 				id="theme-btn"
 				class="absolute top-2 right-2 text-center cursor-pointer transition duration-200 ease-in-out hover:scale-110"
 				title="Change Theme!">
-				<img src="./assets/images/light.png" class="inline-block w-12 h-12 cursor-pointer" title="Change Theme!" />
+				<img
+					src="./assets/images/light.png"
+					class="inline-block w-12 h-12 cursor-pointer"
+					alt="A button to change theme color"
+					title="Change Theme!" />
 			</span>
 
 			<!-- Header section for title and Tutorial -->
@@ -31,7 +35,8 @@
 				<h1 class="pb-4 px-8 text-center text-3xl font-bold tracking-wider">Type Speed Test</h1>
 
 				<p class="my-0 mx-auto w-3/5">
-					<b>Tutorial: </b> When you start typing, the timer starts and as you type each letter, your text will be checked(case sensitive) with the sample text.
+					<b>Tutorial: </b> When you start typing, the timer starts and as you type each letter, your text will be checked(case sensitive) with the
+					sample text.
 				</p>
 			</article>
 
@@ -53,6 +58,8 @@
 									aria-expanded="true"
 									aria-haspopup="true">
 									Easy
+
+									<!-- Arrow down icon -->
 									<svg class="ml-auto h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 										<path
 											fill-rule="evenodd"
@@ -73,19 +80,22 @@
 									class="text-gray-700 block py-2 text-sm hover:bg-gray-100 hover:text-gray-900 hover:font-bold hover:cursor-pointer dark:text-slate-200 dark:hover:bg-sky-700"
 									role="menuitem"
 									id="drop-item1"
-									>Easy</a>
+									>Easy</a
+								>
 
 								<a
 									class="text-gray-700 block py-2 text-sm hover:bg-gray-100 hover:text-gray-900 hover:font-bold hover:cursor-pointer dark:text-slate-200 dark:hover:bg-sky-700"
 									role="menuitem"
 									id="drop-item2"
-									>Normal</a>
+									>Normal</a
+								>
 
 								<a
 									class="text-gray-700 block py-2 text-sm hover:bg-gray-100 hover:text-gray-900 hover:font-bold hover:cursor-pointer dark:text-slate-200 dark:hover:bg-sky-700"
 									role="menuitem"
 									id="drop-item3"
-									>Hard</a>
+									>Hard</a
+								>
 							</div>
 						</div>
 					</legend>
@@ -112,7 +122,12 @@
 
 				<!-- Timer and Restart button section -->
 				<section class="flex justify-between mt-4">
-					<div>
+					<div class="flex justify-between items-center gap-2">
+						<!-- Clock icon for timer -->
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 dark:text-slate-200">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+
 						<div id="timer" class="text-5xl font-bold dark:text-slate-200">00:00</div>
 					</div>
 
