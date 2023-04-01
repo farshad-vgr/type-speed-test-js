@@ -137,6 +137,7 @@ function spellChecker() {
 
 	if (enteredText === "") {
 		textValidator.style.borderColor = "grey";
+		textArea.style.caretColor = "grey";
 	} else if (enteredText === sampleText.innerHTML) {
 		textValidator.style.borderColor = "lightgreen";
 		showResult();
@@ -145,8 +146,10 @@ function spellChecker() {
 	} else {
 		if (enteredText === sampleTextMatch) {
 			textValidator.style.borderColor = "deepskyblue";
+			textArea.style.caretColor = "deepskyblue";
 		} else {
 			textValidator.style.borderColor = "red";
+			textArea.style.caretColor = "red";
 		}
 	}
 }
